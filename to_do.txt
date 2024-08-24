@@ -1,0 +1,3 @@
+Lista de funções para serem feitas:
+1 - fazer com que gere números aleatorios
+    1.1  4 digitos, 6 e 8 digitos

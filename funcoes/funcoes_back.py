@@ -1,4 +1,5 @@
 import random
+from time import sleep
 
 # printa linha de acordo com o texto
 def linha(tam = 42):
@@ -11,28 +12,34 @@ def titulo():
 
 
 def opcoesmenu():
-    list = ["Gerar senha 4 digitos", "Gerar senha 6 digitos", "Gerar senha 8 digitos"]
+    list = ["Criar senha númerica", "Criar senha alfanúmerica", "Criar senha alfabética", "Sair"]
     i = 1
     for op in list:
         print(f"{i}-{op}\n")
         i += 1
     
+def gerar_numeros():
+    num = int(input('Digite a quantidade de números que você quer na sua senha: '))
+    print(random.sample(range(0, 10), num))
+    sleep(1)
     
-def cabecalho():
+def gerar_alfanumerica():
+    print("x")
+
+def gerar_alfabetica():
+    print("s")
+    
+def menu():
     titulo()
     opcoesmenu()
     resp = int(input("Digite sua resposta: "))
-    gerarnumeros(resp)
+    if resp == 1:
+        gerar_numeros()
+    elif resp == 2:
+        gerar_alfanumerica()
+    elif resp == 3:
+        gerar_alfabetica()
+
     
-def gerarnumeros(opc):
-    print(opc)
-    if opc == 1:
-        print(random.sample(range(0, 10), 4))
-    elif opc == 2:
-        print(random.sample(range(0,10), 6))
-    elif opc == 3:
-        print(random.sample(range(0,10), 8))
-    elif opc == 4:
-        return "break"
         
     

@@ -1,6 +1,9 @@
 Lista de funções para serem feitas:
-1 - fazer com que gere números aleatorios
-    1.1  4 digitos, 6 e 8 digitos
+1 - fazer com que gere números aleatorios ok
+    1.1  4 digitos, 6 e 8 digitos ok 
 2 - Fazer um histórico de senhas
-3 - O Programa deve gerar senhas alfanúmericas de acordo com os digitos
-4 -
+3 - O Programa deve gerar senhas alfanúmericas de acordo com os digitos 
+4 - O programa deve gerar senha somente letras
+    4.1 - gerar de acordo com a quantidade que quiser
+5 - arrumar o menu para pausar
+6 - fazer a funcão de misto tanto numeros como letras

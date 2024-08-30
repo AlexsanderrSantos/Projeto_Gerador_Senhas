@@ -1,4 +1,4 @@
 from funcoes import funcoes_back
 
-opcao = funcoes_back.menu()
+funcoes_back.menu()
         

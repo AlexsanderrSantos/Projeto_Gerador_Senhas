@@ -7,3 +7,7 @@ Lista de funções para serem feitas:
     4.1 - gerar de acordo com a quantidade que quiser
 5 - arrumar o menu para pausar
 6 - fazer a funcão de misto tanto numeros como letras
+7 - refinar o codigo
+8 - colocar try/except para tratamento de erros
+9 - mais comentários
+10 - finalizar com flask para web

@@ -1,6 +1,5 @@
 import string
 import random
-from time import sleep
 
 # printa linha de acordo com o texto
 def linha(tam = 42):
@@ -24,16 +23,20 @@ def opcoesmenu():
     elif resposta == 2:
         gerar_somenteletras()
     elif resposta == 3:
-        gerar_caracteres()
+        gerar_alfanumerico()
+    elif resposta == 4:
+        
     else:
         linha()
         print("Opção invalida, tente 1, 2 ou 3")
+            
     
 def gerar_somentenumeros():
     linha()
     print("Gostaria de uma senha com: ")
     print("4 Digitos - 6 Digitos - 8 Digitos: ")
     num = int(input())
+    linha()
     while True:
         if num == 4:
             print(random.sample(range(0, 10), num))
@@ -54,20 +57,31 @@ def gerar_somenteletras(quantidade = 8):
     #string.digits pega todos os num de 0-9
     while True:
         if  4 <= quantidade <= 18:
-            caracteres = string.ascii_letters + string.digits
+            caracteres = string.ascii_letters
             senha = ''.join(random.choice(caracteres) for _ in range(quantidade))
             print(senha)
         else:
             print("Valor abaixo de do min ou maior que o maximo permitido, tente novamente.")
         break
-
-def gerar_caracteres():
-    print("s")
-    
+#caracteres = string.ascii_letters + string.digits
+#senha = ''.join(random.choice(caracteres) for _ in range(quantidade))
+def gerar_alfanumerico():
+    linha()
+    quantidade = int(input("Digite a quantidade de caracteres para a senha:[MIN 4 / MAX 18] "))
+    while True:
+        if 4 <= quantidade <= 18:
+            caracteres = string.ascii_letters + string.digits
+            senha = "".join(random.choice(caracteres) for _ in range(quantidade))
+            print(senha)
+        else:
+            print("Valor abaixo do min ou maior que o maximo permitido, tente novamente.")
+        break
 def menu():
-    titulo()
-    n = opcoesmenu()
-    
+    while True:
+        titulo()
+        opcoesmenu()
+
+        
 
 
         

@@ -1,6 +1,8 @@
 import string
 import random
+import pdb
 from time import sleep
+
 
 # printa linha de acordo com o texto
 def linha(tam = 42):
@@ -29,22 +31,21 @@ def opcoesmenu():
         return True
     else:
         linha()
-        print("Opção invalida, tente 1, 2 ou 3")
+        print("Opção invalida, tente 1, 2, 3 ou 4")
             
     
 def gerar_somentenumeros():
+    opc =[4, 6, 8]
     linha()
     print("Gostaria de uma senha com: ")
-    print("4 Digitos - 6 Digitos - 8 Digitos: ")
+    print("[4 Digitos - 6 Digitos - 8 Digitos]: ",end='')
     num = int(input())
     linha()
     while True:
-        if num == 4:
-            print(random.sample(range(0, 10), num))
-        elif num == 6:
-            print(random.sample(range(0, 9),num))
-        elif num == 8:
-            print(random.sample(range(0, 9), num))
+        if num in opc:
+            senha = (random.sample(range(0, 10), num))
+            for indice, numero in enumerate(senha):
+                print(f"{numero}", end="\n" if indice == len(senha) -1 else "")
         else:
             print("Erro ! Digite somente uma das 3 opções.")
         sleep(1)
@@ -66,8 +67,7 @@ def gerar_somenteletras(quantidade = 8):
             print("Valor abaixo de do min ou maior que o maximo permitido, tente novamente.")
         sleep(1)
         break
-#caracteres = string.ascii_letters + string.digits
-#senha = ''.join(random.choice(caracteres) for _ in range(quantidade))
+
 def gerar_alfanumerico():
     linha()
     quantidade = int(input("Digite a quantidade de caracteres para a senha:[MIN 4 / MAX 18] "))

@@ -1,4 +1,3 @@
 from funcoes import funcoes_back
 
-funcoes_back.menu()
-        
+funcoes_back.Menu()

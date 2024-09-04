@@ -20,7 +20,8 @@ def Opcoesmenu():
     for op in list:
         print(f"{i}-{op}\n")
         i += 1
-    resposta =(int(input("Digite sua resposta(1, 2, 3, 4): ")))
+    resposta = input("Digite sua resposta(1, 2, 3, 4): ")
+    resposta = Valida_numeros(resposta)
     if resposta == 1:
         Gerar_somentenumeros()
     elif resposta == 2:
@@ -30,8 +31,7 @@ def Opcoesmenu():
     elif resposta == 4:
         return True
     else:
-        Linha()
-        print("Opção invalida, tente 1, 2, 3 ou 4")
+        print("Digite uma opção valida !")
             
     
 def Gerar_somentenumeros():
@@ -39,7 +39,8 @@ def Gerar_somentenumeros():
     Linha()
     print("Gostaria de uma senha com: ")
     print("[4 Digitos - 6 Digitos - 8 Digitos]")
-    num = Valida_numeros()
+    resposta = input("Sua resposta: ")
+    num = Valida_numeros(resposta)
     Linha()
     while True:
         if num in opc:
@@ -54,7 +55,8 @@ def Gerar_somentenumeros():
 
 def Gerar_somenteletras(quantidade = 8):
     Linha()
-    quantidade = int(input("Digite a quantidade de caracteres para sua senha[MIN 4 / MAX 18]: "))
+    quantidade = input("Digite a quantidade de caracteres para sua senha[MIN 4 / MAX 18]: ")
+    quantidade = Valida_numeros(quantidade)
     #string.ascii pega todas as letras a-z grande e pequena
     #string.digits pega todos os num de 0-9
     while True:
@@ -71,7 +73,8 @@ def Gerar_somenteletras(quantidade = 8):
 
 def Gerar_alfanumerico():
     Linha()
-    quantidade = int(input("Digite a quantidade de caracteres para a senha:[MIN 4 / MAX 18] "))
+    quantidade = input("Digite a quantidade de caracteres para a senha:[MIN 4 / MAX 18] ")
+    quantidade = Valida_numeros(quantidade)
     while True:
         if 4 <= quantidade <= 18:
             caracteres = string.ascii_letters + string.digits
@@ -84,14 +87,18 @@ def Gerar_alfanumerico():
         break
 
 
-def Valida_numeros():
-    try:
-        opc = (input("Digite uma opção valida: "))
-        isinstance(opc, int) == True
-    except():
-        print("Ocorreu um erro")    
-    else:
-        return opc
+def Valida_numeros(opc):
+        try:
+            numero_inteiro = int(opc)
+        except(TypeError,ValueError):
+            Linha()
+            print("Ocorreu um erro de tipo ou valor")
+            return False
+        except(KeyboardInterrupt):
+            Linha()
+            print("O usuário não quis digitar")
+        else:
+            return numero_inteiro
 
 
 def Menu():

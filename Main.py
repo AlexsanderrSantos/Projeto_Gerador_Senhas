@@ -1,3 +1,7 @@
 from funcoes import funcoes_back
-
-funcoes_back.Menu()
+import streamlit as st
+def main():
+    funcoes_back.Menu()
+    
+main()
+st.title("Testando")

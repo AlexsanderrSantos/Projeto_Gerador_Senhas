@@ -108,7 +108,7 @@ def Menu():
         if escolha == True:
             break
 
-        
+Menu()        
 
 
         
